@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AnswerHandler from "./AnswerHandler";
 import Result from "./Result";
 import "../styles/QuizStyles.css";

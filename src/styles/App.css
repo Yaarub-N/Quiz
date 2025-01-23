@@ -27,7 +27,6 @@ body.dark-theme {
 
 /* Reset och grundläggande stilar */
 body {
-  margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--primary-text-color);
@@ -37,7 +36,6 @@ body {
 
 #root {
   max-width: 1280px;
-
   text-align: center;
 }
 
@@ -46,7 +44,6 @@ body {
   flex-direction: column;
   min-height: calc(100vh - 5rem);
   margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 header {
@@ -57,9 +54,13 @@ main {
   flex: 1;
 }
 
+.quiz {
+  color: var(--button-hover-border);
+}
+
 footer {
   margin-top: auto;
-  padding: 1rem 0;
+
   font-size: 0.9rem;
   color: var(--secondary-text-color);
 }

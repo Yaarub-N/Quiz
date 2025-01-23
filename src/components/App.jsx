@@ -22,7 +22,7 @@ const App = () => {
         </button>
       </header>
       <main>
-        <h1>Quiz</h1>
+        <h1 className="quiz">Quiz</h1>
         <Quiz />
       </main>
       <footer>
