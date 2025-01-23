@@ -44,7 +44,7 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 3rem);
+  min-height: calc(100vh - 5rem);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
