@@ -1,3 +1,5 @@
+import React from "react";
+
 import React, { useEffect } from "react";
 
 const Timer = ({ timeLeft, setTimeLeft, onTimeUp }) => {

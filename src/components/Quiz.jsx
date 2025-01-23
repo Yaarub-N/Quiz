@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import AnswerHandler from "./AnswerHandler";
 import Result from "./Result";
 import "../styles/QuizStyles.css";
