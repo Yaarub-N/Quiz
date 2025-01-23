@@ -1,0 +1,84 @@
+/* Globala CSS-variabler för teman */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background-color: #ffffff;
+  --primary-text-color: #213547;
+  --secondary-text-color: #646cff;
+  --button-background: #f9f9f9;
+  --button-text: #213547;
+  --button-border: transparent;
+  --button-hover-background: #e3e3e3;
+  --button-hover-border: #646cff;
+}
+
+body.dark-theme {
+  --background-color: #242424;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: rgba(255, 255, 255, 0.87);
+  --button-background: #1a1a1a;
+  --button-text: #ffffff;
+  --button-hover-background: #646cff;
+  --button-hover-border: #535bf2;
+}
+
+/* Reset och grundläggande stilar */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  min-width: 320px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  max-width: 1280px;
+
+  text-align: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3rem);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+header {
+  position: relative;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  color: var(--secondary-text-color);
+}
+
+/* Temaväxlarens stil */
+.theme-switch {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-switch:hover {
+  background-color: var(--button-hover-background);
+  border: 1px solid var(--button-hover-border);
+}
