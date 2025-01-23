@@ -14,8 +14,8 @@ const Quiz = () => {
 
   // Fetch questions from a JSON file
   useEffect(() => {
-    fetch("/questions.json")
-      .the((response) => {
+    fetch("/questions.json") // Om filen ligger i public-mappen
+      .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

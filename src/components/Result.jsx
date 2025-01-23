@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Result = ({ score, totalQuestions, onRestart }) => {
   const getResultMessage = () => {
-    if (score === totalQuestions) {
+    if (score === totalQuestions && score > 9) {
       return "Perfect... Du är en stjärna! 🎊 🎉😁👌";
     } else if (score === 8 && score < 10) {
       return "Grymt! 🎉😁👌";
