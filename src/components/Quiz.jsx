@@ -13,7 +13,7 @@ const Quiz = () => {
 
   // Fetch questions from a JSON file
   useEffect(() => {
-    fetch("questions.json")
+    fetch("../jsonFolder/questions.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -61,7 +61,7 @@ const Quiz = () => {
     setTimeLeft(30);
     setCurrentQuestionIndex(0);
     setQuizComplete(false);
-    fetch("questions.json") // Re-fetch questions to reset the quiz
+    fetch("../jsonFolder/questions.json") // Re-fetch questions to reset the quiz
       .then((response) => response.json())
       .then((data) => {
         const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 10);
