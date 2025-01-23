@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/App.css";
+import Quiz from "./Quiz";
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -21,7 +22,8 @@ const App = () => {
         </button>
       </header>
       <main>
-        <h1>Quiz</h1>
+        <h1 className="quiz">Quiz</h1>
+        <Quiz />
       </main>
       <footer>
         <p>&copy; 2025 Yaarub</p>
