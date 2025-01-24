@@ -7,19 +7,19 @@
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "5cbdbbbb",
+      "fileHash": "576c2444",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "8f9ec5fa",
+      "fileHash": "316e6ccd",
       "needsInterop": true
     },
     "prop-types": {
       "src": "../../node_modules/prop-types/index.js",
       "file": "prop-types.js",
-      "fileHash": "8a9e12e0",
+      "fileHash": "e6453f9d",
       "needsInterop": true
     }
   },
