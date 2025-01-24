@@ -7,7 +7,6 @@ const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
-    // Lägg till eller ta bort "dark-theme" från <body> beroende på isDarkTheme
     document.body.classList.toggle("dark-theme", isDarkTheme);
   }, [isDarkTheme]);
 

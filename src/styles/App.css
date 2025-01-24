@@ -23,6 +23,7 @@ body.dark-theme {
   --button-text: #ffffff;
   --button-hover-background: #646cff;
   --button-hover-border: #535bf2;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Reset och grundläggande stilar */
@@ -76,7 +77,7 @@ footer {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .theme-switch:hover {
