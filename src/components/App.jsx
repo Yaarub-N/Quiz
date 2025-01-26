@@ -18,7 +18,7 @@ const App = () => {
     <div className="app">
       <header>
         <button className="theme-switch" onClick={handleThemeToggle}>
-          {isDarkTheme ? "Switch to Light Theme" : "Switch to Dark Theme"}
+          {isDarkTheme ? "🌞" : "🌙"}
         </button>
       </header>
       <main>

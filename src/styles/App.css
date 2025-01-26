@@ -8,10 +8,10 @@
   --background-color: #ffffff;
   --primary-text-color: #213547;
   --secondary-text-color: #646cff;
-  --button-background: #f9f9f9;
+  --button-background: #eee;
   --button-text: #213547;
   --button-border: transparent;
-  --button-hover-background: #e3e3e3;
+  --button-hover-background: #aaa;
   --button-hover-border: #646cff;
 }
 
@@ -55,6 +55,12 @@ main {
   flex: 1;
 }
 
+main > h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
 .quiz {
   color: var(--button-hover-border);
 }
@@ -69,9 +75,10 @@ footer {
 /* Temaväxlarens stil */
 .theme-switch {
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   right: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem;
+  font-size: 1.5rem;
   background-color: var(--button-background);
   color: var(--button-text);
   border: none;
