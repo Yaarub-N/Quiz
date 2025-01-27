@@ -7,7 +7,7 @@
 :root {
   --background-color: #ffffff;
   --primary-text-color: #213547;
-  --secondary-text-color: #646cff;
+  --secondary-text-color: rgba(255, 255, 255, 0.87);
   --button-background: #eee;
   --button-text: #213547;
   --button-border: transparent;
