@@ -13,6 +13,9 @@
   --button-border: transparent;
   --button-hover-background: #aaa;
   --button-hover-border: #646cff;
+  --wrong-color: #fa8077;
+  --right-color: #61ac64;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-theme {
@@ -23,10 +26,11 @@ body.dark-theme {
   --button-text: #ffffff;
   --button-hover-background: #646cff;
   --button-hover-border: #535bf2;
+  --wrong-color: #f44336;
+  --right-color: #4caf50;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Reset och grundläggande stilar */
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--background-color);

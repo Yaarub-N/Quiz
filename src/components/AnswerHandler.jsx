@@ -1,15 +1,27 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const AnswerHandler = ({ handleAnswer, options }) => {
+//av ChatGPT-4
+const AnswerHandler = ({ handleAnswer, options, correctAnswer }) => {
+  AnswerHandler.propTypes = {
+    handleAnswer: PropTypes.func.isRequired, // Funktion som hanterar svaret
+    options: PropTypes.arrayOf(PropTypes.string).isRequired, // Array av alternativ (strings)
+    correctAnswer: PropTypes.string.isRequired, // Rätt svar (string)
+  };
+
+  const [selectedOption, setSelectedOption] = useState(null);
   const [isDisabled, setIsDisabled] = useState(false);
 
   const handleClick = (option) => {
     if (!isDisabled) {
-      handleAnswer(option); // Kör den ursprungliga funktionen
+      setSelectedOption(option); // Spara användarens val
+      handleAnswer(option); // Kör funktionen för att hantera svaret
       setIsDisabled(true); // Inaktivera knappar
+
       setTimeout(() => {
-        setIsDisabled(false); // Aktivera igen efter 1 sekund
-      }, 1000); // 1000 ms = 1 sekund
+        setSelectedOption(null); // Återställ val efter 1 sekund
+        setIsDisabled(false); // Aktivera knappar igen
+      }, 1000);
     }
   };
 
@@ -19,7 +31,25 @@ const AnswerHandler = ({ handleAnswer, options }) => {
         <button
           key={index}
           onClick={() => handleClick(option)}
-          disabled={isDisabled} // Inaktivera om debounce är aktiv
+          disabled={isDisabled}
+          className={`
+            option-btn 
+            ${
+              selectedOption === option && option === correctAnswer
+                ? "correct"
+                : ""
+            }
+            ${
+              selectedOption === option && option !== correctAnswer
+                ? "incorrect"
+                : ""
+            }
+            ${
+              selectedOption !== null && option === correctAnswer
+                ? "correct"
+                : ""
+            }
+          `}
         >
           {option}
         </button>

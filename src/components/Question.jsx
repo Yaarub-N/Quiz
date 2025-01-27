@@ -1,8 +1,12 @@
 import React from "react";
-
 import PropTypes from "prop-types";
 
 const Question = ({ currentQuestion, handleAnswer }) => {
+  //av ChatGPT-4
+  Question.propTypes = {
+    currentQuestion: PropTypes.object.isRequired,
+    handleAnswer: PropTypes.func.isRequired,
+  };
   if (!currentQuestion || !handleAnswer) {
     return <div>Fel i fråga eller svarshantering</div>;
   }
@@ -19,11 +23,6 @@ const Question = ({ currentQuestion, handleAnswer }) => {
       </div>
     </div>
   );
-};
-
-Question.propTypes = {
-  currentQuestion: PropTypes.object.isRequired,
-  handleAnswer: PropTypes.func.isRequired,
 };
 
 export default Question;

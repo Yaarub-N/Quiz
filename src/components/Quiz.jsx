@@ -16,7 +16,7 @@ const Quiz = () => {
   // Fetch questions from a JSON file
   useEffect(() => {
     setTimeout(() => {
-      fetch("/questions.json") // Om filen ligger i public-mappen
+      fetch("/questions.json")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -48,6 +48,8 @@ const Quiz = () => {
     }
   }, [timeLeft, quizComplete, currentQuestionIndex, shuffledQuestions.length]);
 
+  //handel Answer
+
   const handleAnswer = (selectedOption) => {
     const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
@@ -68,6 +70,7 @@ const Quiz = () => {
     }, 1000);
   };
 
+  //handel Restart
   const handleRestart = () => {
     setScore(0);
     setTimeLeft(10);
@@ -92,6 +95,8 @@ const Quiz = () => {
     );
   }
 
+  //three dots
+
   if (shuffledQuestions.length === 0) {
     return (
       <div className="quiz-container">
@@ -113,6 +118,8 @@ const Quiz = () => {
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
+  //return
+
   return (
     <div className="quiz-container">
       <div className="timer">
@@ -129,6 +136,7 @@ const Quiz = () => {
         <AnswerHandler
           handleAnswer={handleAnswer}
           options={currentQuestion.options}
+          correctAnswer={currentQuestion.answer}
         />
       </div>
       <p

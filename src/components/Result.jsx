@@ -3,6 +3,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Result = ({ score, totalQuestions, onRestart }) => {
+  //av ChatGPT-4
+  Result.propTypes = {
+    score: PropTypes.number.isRequired,
+    totalQuestions: PropTypes.number.isRequired,
+    onRestart: PropTypes.func.isRequired,
+  };
+
   const getResultMessage = () => {
     if (score > 9) {
       return "Perfect... Du är en stjärna! 🎊 🎉😁👌";
@@ -28,12 +35,6 @@ const Result = ({ score, totalQuestions, onRestart }) => {
       </div>
     </div>
   );
-};
-
-Result.propTypes = {
-  score: PropTypes.number.isRequired,
-  totalQuestions: PropTypes.number.isRequired,
-  onRestart: PropTypes.func.isRequired,
 };
 
 export default Result;

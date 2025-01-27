@@ -27,7 +27,6 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.options button:hover,
 .startaOm:hover {
   background-color: var(--button-hover-background);
   border-color: var(--button-hover-border);
@@ -80,11 +79,35 @@
 .feedback {
   height: 1.5rem;
   font-size: 1.2rem;
-  color: green;
+  color: var(--right-color);
 }
 
 .feedback.wrong {
-  color: red;
+  color: var(--wrong-color);
+}
+.option-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  background-color: var(--button-background);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: var(--button-text);
+  color: var(--button-hover-background);
+}
+
+.option-btn.correct {
+  background-color: var(--right-color);
+  color: var(--button-text);
+}
+
+.option-btn.incorrect {
+  background-color: var(--wrong-color);
+  color: var(--button-text);
 }
 
 @media (max-width: 820px) {
