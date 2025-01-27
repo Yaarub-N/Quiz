@@ -3,6 +3,7 @@ import React from "react";
 import AnswerHandler from "./AnswerHandler";
 import Result from "./Result";
 import "../styles/QuizStyles.css";
+import { ThreeDots } from "react-loader-spinner";
 
 const Quiz = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
@@ -14,18 +15,22 @@ const Quiz = () => {
 
   // Fetch questions from a JSON file
   useEffect(() => {
-    fetch("/questions.json") // Om filen ligger i public-mappen
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 10);
-        setShuffledQuestions(shuffledData);
-      })
-      .catch((error) => console.error("Error fetching questions:", error));
+    setTimeout(() => {
+      fetch("/questions.json") // Om filen ligger i public-mappen
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const shuffledData = data
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 10);
+          setShuffledQuestions(shuffledData);
+        })
+        .catch((error) => console.error("Error fetching questions:", error));
+    }, 2000);
   }, []);
 
   // Timer effect
@@ -82,7 +87,22 @@ const Quiz = () => {
   }
 
   if (shuffledQuestions.length === 0) {
-    return <div className="quiz-container">Laddar frågor...</div>;
+    return (
+      <div className="quiz-container">
+        <div className="threeDts">
+          <ThreeDots
+            color=" var(--button-hover-background)"
+            visible={true}
+            height="100"
+            width="80"
+            radius="100"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </div>
+      </div>
+    );
   }
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];

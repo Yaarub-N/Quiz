@@ -1,15 +1,3 @@
-/*import React from "react";
-
-const AnswerHandler = ({ handleAnswer, options }) => (
-  <div className="options">
-    {options.map((option, index) => (
-      <button key={index} onClick={() => handleAnswer(option)}>
-        {option}
-      </button>
-    ))}
-  </div>
-);
-*/
 import React, { useState } from "react";
 
 const AnswerHandler = ({ handleAnswer, options }) => {
