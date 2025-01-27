@@ -48,35 +48,40 @@ body {
 }
 
 header {
-  position: relative;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  left: 50%;
 }
 
 main {
   flex: 1;
 }
 
-main > h1 {
+.quiz {
+  color: var(--button-hover-border);
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-}
-
-.quiz {
-  color: var(--button-hover-border);
+  margin: 10px;
 }
 
 footer {
   margin-top: auto;
-
+  position: absolute;
   font-size: 0.9rem;
   color: var(--secondary-text-color);
+  transform: translatex(50%);
+  left: calc(50% - 90px);
+  bottom: 1%;
 }
 
 /* Temaväxlarens stil */
 .theme-switch {
   position: absolute;
+  transform: translateY(-50%);
   top: 2rem;
-  right: 1rem;
+  left: 10rem;
   padding: 0.1rem;
   font-size: 1.5rem;
   background-color: var(--button-background);
@@ -90,4 +95,10 @@ footer {
 .theme-switch:hover {
   background-color: var(--button-hover-background);
   border: 1px solid var(--button-hover-border);
+}
+
+@media (max-width: 570px) {
+  .theme-switch {
+    left: 7rem;
+  }
 }

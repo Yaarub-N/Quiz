@@ -2,7 +2,7 @@
   width: 800px;
   height: 400px;
   margin: 1rem auto;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -78,6 +78,11 @@
   top: 50%;
   transform: translate(-50%, -50%);
   left: 50%;
+}
+.timeLeft {
+  color: var(--button-hover-border);
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 @media (max-width: 820px) {

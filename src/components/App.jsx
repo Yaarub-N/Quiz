@@ -17,12 +17,12 @@ const App = () => {
   return (
     <div className="app">
       <header>
+        <h1 className="quiz">Quiz</h1>
         <button className="theme-switch" onClick={handleThemeToggle}>
-          {isDarkTheme ? "🌞" : "🌙"}
+          {isDarkTheme ? "🌞" : "🌛"}
         </button>
       </header>
       <main>
-        <h1 className="quiz">Quiz</h1>
         <Quiz />
       </main>
       <footer>
