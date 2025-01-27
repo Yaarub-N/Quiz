@@ -35,18 +35,18 @@ const Quiz = () => {
 
   // Timer effect
   useEffect(() => {
-    if (currentQuestionIndex + 1 === 10) {
-      setQuizComplete(true);
-    } else {
-      if (timeLeft > 0 && !quizComplete) {
-        const timer = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
-        return () => clearTimeout(timer);
-      } else if (timeLeft === 0) {
+    if (timeLeft > 0 && !quizComplete) {
+      const timer = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
+      return () => clearTimeout(timer);
+    } else if (timeLeft === 0) {
+      if (currentQuestionIndex < shuffledQuestions.length - 1) {
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
         setTimeLeft(10);
+      } else {
+        setQuizComplete(true);
       }
     }
-  }, [timeLeft, quizComplete, currentQuestionIndex]);
+  }, [timeLeft, quizComplete, currentQuestionIndex, shuffledQuestions.length]);
 
   const handleAnswer = (selectedOption) => {
     const currentQuestion = shuffledQuestions[currentQuestionIndex];
@@ -54,15 +54,13 @@ const Quiz = () => {
     if (selectedOption === currentQuestion.answer) {
       setScore((prevScore) => prevScore + 1);
       setFeedback("Rätt! 😀👌");
-      setTimeLeft(10);
     } else {
       setFeedback("Fel! 😒");
-      setTimeLeft(10);
     }
-
+    setTimeLeft(10);
     setTimeout(() => {
       setFeedback("");
-      if (currentQuestionIndex + 1 < shuffledQuestions.length) {
+      if (currentQuestionIndex < shuffledQuestions.length - 1) {
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
       } else {
         setQuizComplete(true);
