@@ -95,7 +95,6 @@ footer {
 
 .theme-switch:hover {
   background-color: var(--button-hover-background);
-  border: 1px solid var(--button-hover-border);
 }
 
 @media (max-width: 570px) {

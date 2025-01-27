@@ -122,7 +122,9 @@ const Quiz = () => {
           Återstående tid: <span className="timeLeft"> {timeLeft} </span>
           sekunder
         </p>
-        <p>Question: {currentQuestionIndex + 1}</p>
+        <p>
+          Question: {currentQuestionIndex + 1} av {shuffledQuestions.length}
+        </p>
       </div>
       <div className="questionContainer">
         <h2 className="question">{currentQuestion.question}</h2>
@@ -131,7 +133,11 @@ const Quiz = () => {
           options={currentQuestion.options}
         />
       </div>
-      <p className="feedback">{feedback}</p>
+      <p
+        className={`feedback ${feedback === "Rätt! 😀👌" ? "right" : "wrong"}`}
+      >
+        {feedback}
+      </p>
     </div>
   );
 };
