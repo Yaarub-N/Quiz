@@ -13,24 +13,24 @@ const Quiz = () => {
   const [quizComplete, setQuizComplete] = useState(false);
   const [timeLeft, setTimeLeft] = useState(12);
 
+  const getQuestions = () => {
+    fetch("/questions.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 10);
+        setShuffledQuestions(shuffledData);
+      })
+      .catch((error) => console.error("Error fetching questions:", error));
+  };
+
   // Fetch questions from a JSON file
   useEffect(() => {
-    setTimeout(() => {
-      fetch("/questions.json")
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          const shuffledData = data
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 10);
-          setShuffledQuestions(shuffledData);
-        })
-        .catch((error) => console.error("Error fetching questions:", error));
-    }, 2000);
+    setTimeout(() => getQuestions(), 2000);
   }, []);
 
   // Timer effect
@@ -76,13 +76,7 @@ const Quiz = () => {
     setTimeLeft(10);
     setCurrentQuestionIndex(0);
     setQuizComplete(false);
-    fetch("/questions.json") // Re-fetch questions to reset the quiz
-      .then((response) => response.json())
-      .then((data) => {
-        const shuffledData = data.sort(() => Math.random() - 0.5).slice(0, 10);
-        setShuffledQuestions(shuffledData);
-      })
-      .catch((error) => console.error("Error fetching questions:", error));
+    getQuestions();
   };
 
   if (quizComplete) {
